@@ -157,7 +157,7 @@ const HELP = `phone: read and drive the Android phone (adb on PATH; set ANDROID_
   phone open <app|package>   e.g. phone open chrome
   phone url <url>            open a link in the default browser/app
   phone shot <file.png>      screenshot
-Every action prints the screen it led to. Taps/typing need Xiaomi "USB debugging (Security settings)".`;
+Every action prints the screen it led to. On Xiaomi, taps/typing also need "USB debugging (Security settings)".`;
 
 function main(argv) {
   const [cmd, ...args] = argv;
@@ -179,7 +179,7 @@ if (require.main === module) {
   try { main(process.argv.slice(2)); } catch (e) {
     const msg = String(e.stderr || e.message || e);
     console.error(/INJECT_EVENTS/.test(msg)
-      ? 'blocked: turn on Developer options > "USB debugging (Security settings)" on the phone'
+      ? 'input blocked by the phone. On Xiaomi/Redmi/POCO turn on Developer options > "USB debugging (Security settings)"'
       : msg.trim().split('\n').slice(-3).join('\n'));
     process.exit(1);
   }

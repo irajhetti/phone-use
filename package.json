@@ -1,0 +1,12 @@
+{
+  "name": "phone-use",
+  "version": "0.1.0",
+  "description": "Let an AI agent read and drive an Android phone over adb, by label. One file, no dependencies, no app on the phone.",
+  "bin": { "phone": "phone.js" },
+  "files": ["phone.js"],
+  "scripts": { "test": "node --test" },
+  "engines": { "node": ">=18" },
+  "keywords": ["android", "adb", "agent", "claude", "codex", "automation", "uiautomator"],
+  "repository": { "type": "git", "url": "git+https://github.com/irajhetti/phone-use.git" },
+  "license": "MIT"
+}
